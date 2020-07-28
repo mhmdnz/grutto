@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/categories', function () {
+    return view('categories');
+})->name('categories.show');
+
+Route::get('/tags', function () {
+    return view('tags');
+})->name('tags.show');
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('categories');
+})->name('news.show');
