@@ -23,6 +23,8 @@ Route::get('/tags', function () {
     return view('tags');
 })->name('tags.show');
 
+Route::post('/tags', 'TagController@save')->name('tags.save');
+
 Route::get('/', function () {
     return view('categories');
 })->name('news.show');
