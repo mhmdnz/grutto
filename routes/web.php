@@ -17,6 +17,8 @@ Route::get('/categories', function () {
     return view('categories');
 })->name('categories.show');
 
+Route::post('/categories', 'CategoryController@save')->name('categories.save');
+
 Route::get('/tags', function () {
     return view('tags');
 })->name('tags.show');
