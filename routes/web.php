@@ -26,5 +26,9 @@ Route::get('/tags', function () {
 Route::post('/tags', 'TagController@save')->name('tags.save');
 
 Route::get('/', function () {
-    return view('categories');
+    return view('news');
 })->name('news.show');
+
+Route::get('/news', 'NewsController@getJson')->name('news.json');
+
+Route::post('/news', 'NewsController@save')->name('news.save');

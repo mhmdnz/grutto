@@ -18,10 +18,12 @@
 
     {{--    table--}}
     <table class="footable table table-striped table-advance table-hover">
+        <th><i class="icon-bullhorn"></i>Id</th>
         <th><i class="icon-bullhorn"></i>Name</th>
         <th><i class="icon-bullhorn"></i>Created Time</th>
         @foreach(resolve(\App\Services\TagService::class)->getAll() as $tag)
             <tr style="font-family: tahoma" id="CampaignId">
+                <td>{{$tag->id}}</td>
                 <td>{{$tag->name}}</td>
                 <td> {{$tag->created_at}}</td>
             </tr>
