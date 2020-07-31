@@ -32,8 +32,8 @@
         <th><i class="icon-bullhorn"></i>Id</th>
         <th><i class="icon-bullhorn"></i>Message</th>
         <th><i class="icon-bullhorn"></i>Category Name</th>
-        <th><i class="icon-bullhorn"></i>Created Time</th>
         <th><i class="icon-bullhorn"></i>Tags</th>
+        <th><i class="icon-bullhorn"></i>Created Time</th>
     </table>
 
     <script>
@@ -67,13 +67,13 @@
             cell1.innerHTML = item.id;
             cell2.innerHTML = item.message;
             cell3.innerHTML = item.category.name;
-            cell4.innerHTML = item.created_at;
+            cell5.innerHTML = item.created_at;
             var tag_name = "<ul>";
             item.tags.forEach(function (tag) {
                 tag_name = tag_name + "<li>" + tag.name + "</li>";
             });
             tag_name = tag_name + "</ul>";
-            cell5.innerHTML = tag_name;
+            cell4.innerHTML = tag_name;
         }
     </script>
 

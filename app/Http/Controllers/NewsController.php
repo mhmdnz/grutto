@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
-use App\Http\Requests\TagRequest;
-use App\News;
 use App\Services\NewsService;
-use App\Services\TagService;
 
 class NewsController extends Controller
 {
