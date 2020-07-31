@@ -22,7 +22,7 @@ Route::get('/categories', function () {
     return view('category.categories');
 })->name('categories.show');
 
-Route::get('/category/{category}', 'CategoryController@get')
+Route::get('/category/{category_id}', 'CategoryController@get')
     ->name('categories.get');
 
 Route::post('/categories', 'CategoryController@save')

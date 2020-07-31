@@ -17,8 +17,8 @@ class CategoryController extends Controller
         return view('category.categories');
     }
 
-    public function get(Category $category)
+    public function get($category_id)
     {
-        die('injas');
+        return view('category.index', ['category' => $this->category_service->getWithNews($category_id)]);
     }
 }

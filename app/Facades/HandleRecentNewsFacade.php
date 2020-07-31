@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Cache;
 class HandleRecentNewsFacade
 {
     use NewsServiceAccessor;
-    public $recent_news_cache_key = "recent_visited_news";
+    private $recent_news_cache_key = "recent_visited_news";
 
     public function save($news_id)
     {
         $news = $this->news_service->get($news_id);
         $category = $this->news_service->getCategory($news_id);
-        $cache_key = $this->recent_news_cache_key . "_$category->id";
+        $cache_key = $this->getRecentNewsCacheKey($category->id);
         $result = [$news];
         if (Cache::has($cache_key)) {
             $newses = $this->getResult($news, $cache_key);
@@ -39,5 +39,10 @@ class HandleRecentNewsFacade
             $newses->add($news);
         }
         return $newses;
+    }
+
+    public function getRecentNewsCacheKey($category_id)
+    {
+        return $this->recent_news_cache_key . "_$category_id";
     }
 }

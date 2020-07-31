@@ -28,4 +28,14 @@ class CategoryService
     {
         return $this->category_repository->getAllWith(['news']);
     }
+
+    public function get($id)
+    {
+        return $this->category_repository->get($id);
+    }
+
+    public function getWithNews($id)
+    {
+        return $this->category_repository->getWith($id, ['news']);
+    }
 }
