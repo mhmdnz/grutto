@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\CategoryService;
-use App\Services\NewsService;
-use Illuminate\Http\Request;
+use App\Traits\CategoryServiceAccessor;
 
 class HomeController extends Controller
 {
-    protected $category_service;
-    public function __construct(CategoryService $category_service)
-    {
-        $this->category_service = $category_service;
-    }
+    use CategoryServiceAccessor;
 
     public function index()
     {

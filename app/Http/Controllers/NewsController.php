@@ -3,16 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
-use App\News;
-use App\Services\NewsService;
+use App\Traits\NewsServiceAccessor;
 
 class NewsController extends Controller
 {
-    protected $news_service;
-    public function __construct(NewsService $news_service)
-    {
-        $this->news_service = $news_service;
-    }
+    use NewsServiceAccessor;
 
     public function save(NewsRequest $request)
     {
@@ -28,10 +23,6 @@ class NewsController extends Controller
 
     public function get($news_id)
     {
-        return view('news.index',
-            [
-                'news' => $this->news_service->getWithTags($news_id)
-            ]
-        );
+        return $this->news_service->showWithTags($news_id);
     }
 }

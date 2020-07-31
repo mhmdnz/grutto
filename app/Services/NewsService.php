@@ -7,6 +7,7 @@ use App\News;
 use App\Repositories\NewsRepository;
 use App\Tag;
 use Illuminate\Http\Request;
+use Facades\App\Facades\HandleRecentNewsFacade;
 
 class NewsService
 {
@@ -41,8 +42,18 @@ class NewsService
         return response($this->news_repository->loadWith(['category', 'tags']));
     }
 
-    public function getWithTags($id)
+    public function showWithTags($id)
     {
-        return $this->news_repository->getWith($id, ['tags']);
+        HandleRecentNewsFacade::save($id);
+        return view('news.index',
+            [
+                'news' => $this->news_repository->getWith($id, ['tags'])
+            ]
+        );
+    }
+
+    public function get($id)
+    {
+        return $this->news_repository->get($id);
     }
 }

@@ -4,15 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\CategoryRequest;
-use App\Services\CategoryService;
+use App\Traits\CategoryServiceAccessor;
 
 class CategoryController extends Controller
 {
-    protected $category_service;
-    public function __construct(CategoryService $category_service)
-    {
-        $this->category_service = $category_service;
-    }
+    use CategoryServiceAccessor;
 
     public function save(CategoryRequest $request)
     {
