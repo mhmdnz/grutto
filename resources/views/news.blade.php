@@ -6,9 +6,14 @@
               action="{{route('news.save')}}">
             @csrf
             <div class="form-group" style="margin-bottom: 10px;margin-top: 10px">
+                <label for="title" class="sr-only">Title</label>
+                <input minlength="3" type="text"
+                       placeholder="News Title"
+                       class="form-control" name="title"
+                       id="title">
                 <label for="campaign_id" class="sr-only">Message</label>
                 <input minlength="3" type="text"
-                       placeholder="Category Name"
+                       placeholder="News Message"
                        class="form-control" name="message"
                        id="message">
                 <label for="campaign_id" class="sr-only">Category</label>
@@ -18,7 +23,7 @@
                     @endforeach
                 </select>
                 <label for="tag_ids" class="sr-only">Tag Ids</label>
-                <input minlength="3" type="text"
+                <input type="text"
                        placeholder="1,2,3..."
                        class="form-control" name="tag_ids"
                        id="tag_ids">
@@ -30,6 +35,7 @@
     {{--    table--}}
     <table class="footable table table-striped table-advance table-hover" id="myTable">
         <th><i class="icon-bullhorn"></i>Id</th>
+        <th><i class="icon-bullhorn"></i>title</th>
         <th><i class="icon-bullhorn"></i>Message</th>
         <th><i class="icon-bullhorn"></i>Category Name</th>
         <th><i class="icon-bullhorn"></i>Tags</th>
@@ -64,16 +70,19 @@
             var cell3 = row.insertCell(2);
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+
             cell1.innerHTML = item.id;
-            cell2.innerHTML = item.message;
-            cell3.innerHTML = item.category.name;
-            cell5.innerHTML = item.created_at;
+            cell3.innerHTML = item.message;
+            cell2.innerHTML = item.title;
+            cell4.innerHTML = item.category.name;
+            cell6.innerHTML = item.created_at;
             var tag_name = "<ul>";
             item.tags.forEach(function (tag) {
                 tag_name = tag_name + "<li>" + tag.name + "</li>";
             });
             tag_name = tag_name + "</ul>";
-            cell4.innerHTML = tag_name;
+            cell5.innerHTML = tag_name;
         }
     </script>
 
