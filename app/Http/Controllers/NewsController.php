@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
+use App\News;
 use App\Services\NewsService;
 
 class NewsController extends Controller
@@ -17,11 +18,20 @@ class NewsController extends Controller
     {
         $this->news_service->save($request);
 
-        return view('news');
+        return view('news.news');
     }
 
     public function getJson()
     {
         return $this->news_service->getJson();
+    }
+
+    public function get($news_id)
+    {
+        return view('news.index',
+            [
+                'news' => $this->news_service->getWithTags($news_id)
+            ]
+        );
     }
 }

@@ -8,7 +8,7 @@ class Category extends Model
 {
     public function news()
     {
-        return $this->hasMany(News::class);
+        return $this->hasMany(News::class)->with('tags');
     }
 
     protected $fillable = ['name'];

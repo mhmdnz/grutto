@@ -18,6 +18,11 @@ class CategoryController extends Controller
     {
         $this->category_service->save($request);
 
-        return view('categories');
+        return view('category.categories');
+    }
+
+    public function get(Category $category)
+    {
+        die('injas');
     }
 }

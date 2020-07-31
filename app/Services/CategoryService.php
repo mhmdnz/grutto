@@ -23,4 +23,9 @@ class CategoryService
     {
         return $this->category_repository->getAll();
     }
+
+    public function getAllWithNews()
+    {
+        return $this->category_repository->getAllWith(['news']);
+    }
 }

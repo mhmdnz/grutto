@@ -40,4 +40,9 @@ class NewsService
     {
         return response($this->news_repository->loadWith(['category', 'tags']));
     }
+
+    public function getWithTags($id)
+    {
+        return $this->news_repository->getWith($id, ['tags']);
+    }
 }

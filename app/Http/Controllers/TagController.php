@@ -17,6 +17,6 @@ class TagController extends Controller
     {
         $this->tag_service->save($request);
 
-        return view('tags');
+        return view('tag.tags');
     }
 }

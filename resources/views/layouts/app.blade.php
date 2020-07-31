@@ -78,7 +78,7 @@
 <body>
 
 <div class="sidebar">
-    <a class="active" href="{{route('news.show')}}">Home</a>
+    <a class="active" href="{{route('home')}}">Home</a>
     <a href="{{ route('categories.show') }}">Categories</a>
     <a href="{{ route('tags.show') }}">Tags</a>
     <a href="{{ route('news.show') }}">News</a>
