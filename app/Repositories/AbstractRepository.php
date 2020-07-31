@@ -15,4 +15,19 @@ class AbstractRepository
     {
         return $this->model->all();
     }
+
+    public function getAllWith(array $relations)
+    {
+        return $this->model->with($relations)->get();
+    }
+
+    public function getWith($id, array $relations)
+    {
+        return $this->model->with($relations)->where('id', $id)->first();
+    }
+
+    public function get($id)
+    {
+        return $this->model->find($id);
+    }
 }
