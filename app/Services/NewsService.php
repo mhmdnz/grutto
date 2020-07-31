@@ -56,4 +56,9 @@ class NewsService
     {
         return $this->news_repository->get($id);
     }
+
+    public function getCategory($id)
+    {
+        return $this->get($id)->category;
+    }
 }
