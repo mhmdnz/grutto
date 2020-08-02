@@ -45,6 +45,7 @@
         <th><i class="icon-bullhorn"></i>Category Name</th>
         <th><i class="icon-bullhorn"></i>Tags</th>
         <th><i class="icon-bullhorn"></i>Created Time</th>
+        <th><i class="icon-bullhorn"></i>External Url</th>
     </table>
 
     <script>
@@ -76,12 +77,14 @@
             var cell4 = row.insertCell(3);
             var cell5 = row.insertCell(4);
             var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
 
             cell1.innerHTML = item.id;
             cell3.innerHTML = item.message;
             cell2.innerHTML = item.title;
             cell4.innerHTML = item.category.name;
             cell6.innerHTML = item.created_at;
+            cell7.innerHTML = item.external_url;
             var tag_name = "<ul>";
             item.tags.forEach(function (tag) {
                 tag_name = tag_name + "<li>" + tag.name + "</li>";
