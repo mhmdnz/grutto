@@ -27,6 +27,11 @@
                        placeholder="1,2,3..."
                        class="form-control" name="tag_ids"
                        id="tag_ids">
+                <label for="external_url" class="sr-only">External Url</label>
+                <input type="text"
+                       placeholder="http://www.google.com.."
+                       class="form-control" name="external_url"
+                       id="external_url">
                 <button class="btn btn-info" type="submit">Save</button>
             </div>
         </form>

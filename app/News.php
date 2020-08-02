@@ -16,5 +16,5 @@ class News extends Model
         return $this->belongsToMany(Tag::class, 'news_tag');
     }
 
-    protected $fillable = ['message', 'category_id', 'extra_url', 'title'];
+    protected $fillable = ['message', 'category_id', 'external_url', 'title'];
 }

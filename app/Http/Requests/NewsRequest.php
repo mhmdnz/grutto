@@ -24,7 +24,10 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:30',
+            'message' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'external_url' => "required|url|regex:/((?!nl)\C).(\/article\/)([\D])/i"
         ];
     }
 }
