@@ -46,4 +46,4 @@ Route::get('/news/{news_id}', 'NewsController@get')
     ->name('news.get');
 
 Route::post('/news', 'NewsController@save')
-    ->name('news.save');
+    ->name('news.save')->middleware('addXCacheHeader');
