@@ -7,7 +7,7 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 # Installation Guid
 
 ## Manualy
-  - [Clone project from Git repository](https://github.com/mhmdnz/snapp_market.git)
+  - [Clone project from Git repository](https://github.com/mhmdnz/grutto.git)
   - [Edit ENV file](#Edit-env-File)
   - [Install Composer Packages](#Install-Composer-Packages)
   - [Run DB migrations](#Run-DB-migrations)
@@ -21,9 +21,9 @@ The Application is wrriten on Laravel, if you are not familier with the environm
 ### Clone project From Git
 
 ```sh
-$ mkdir snappmarket
-$ cd snappmarket
-$ git clone "https://github.com/mhmdnz/snapp_market.git" .
+$ mkdir grutto
+$ cd grutto
+$ git clone "https://github.com/mhmdnz/grutto.git" .
 ```
 
 ### Edit env File
@@ -50,7 +50,7 @@ $ composer install
 //Create database example
 //login to mysql console then use below command
 $ mysql -u{enter user name here} -p{enter password here}
-$ Create Database snappmarket
+$ Create Database grutto
 ```
 ```sh
 $ php artisan migrate --seed
@@ -78,7 +78,7 @@ $ phpunit /address of the test
 
 # Docker Installation Guid
 
-  - [Clone project from Git repository](https://github.com/mhmdnz/snapp_market.git)
+  - [Clone project from Git repository](https://github.com/mhmdnz/grutto.git)
   - [Run Prepration File](#Run-Prepration-File)
   
 ```sh
@@ -87,21 +87,16 @@ $ docker-compose up --build -d
 $ docker exec -it php sh /tmp/Prepration.sh
 ```
 > Check the result : localhost:8080
-## Some helpful commands
-
-```sh
-//to Run Tests
-$ docker exec -it php sh /tmp/RunTests.sh
-
-//to get fresh migration
-$ docker exec -it php sh /tmp/FreshMigrations.sh
-
-//to run composer install
-$ docker exec -it php sh /tmp/ComposerInstall.sh
-```
-
+## Some notices about php tasks
 > Please notice that, <br>
-> - due to lack of time , test and environment databases
-    are same, and affect on each others so for the more accurate tests just run fresh migration 
-> - you could simply change database data <br>
-    just open "database/seeds" directory and feel free to make some changes for better tests 
+> - task 4 : you could check this task on news page , for example this url will work <br>
+> http://www.google.com/asd/article/qwe but these two will not ,http://www.google.com/nl/article/qwe and 
+> http://www.google.com/asd/article/12
+> - task 5 and 7: news and home pages are written on pure javascript ( none jquery ) as you asked and all the tables
+> and ul are filling by js
+> - task 6 : there is a middleware that you could add to any routes that you wanted, the middleware name is "addXCacheHeader"
+> - task 7 : I have used cache for this task and you could checking your cache driver for them  
+
+## Some notices about mysql tasks
+> Please notice that, <br>
+> - mysql task is located in sql_queries.sql file in the project directory
